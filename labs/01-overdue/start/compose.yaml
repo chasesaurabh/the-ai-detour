@@ -1,0 +1,14 @@
+services:
+  mongo:
+    image: mongo:8.0.17@sha256:9814652e33f0cf8b9fddea8b46dfc9d8e19b130dcfdd7b510ca58bb0d40c8b71
+    ports:
+      - "127.0.0.1:27128:27017"
+    volumes:
+      - triage-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+volumes:
+  triage-data:

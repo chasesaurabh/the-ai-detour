@@ -1,0 +1,445 @@
+[
+  {
+    "case": "offset",
+    "repeat": 1,
+    "started": "2026-11-22T03:03:48.999Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "request_clarification = unresolved equal-authority requirements need a decision",
+        "I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z",
+        "S1: candidate returns due < now on strings"
+      ],
+      "reason": "The provided information does not specify the next engineering action, and there is unresolved equal-authority requirements that need a decision."
+    },
+    "elapsedMs": 48718.8929,
+    "usage": {
+      "prompt_tokens": 216,
+      "total_tokens": 353,
+      "completion_tokens": 137,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"request_clarification = unresolved equal-authority requirements need a decision\",\n    \"I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z\",\n    \"S1: candidate returns due < now on strings\"\n  ]\n  ,\n  \"reason\": \"The provided information does not specify the next engineering action, and there is unresolved equal-authority requirements that need a decision.\"\n}"
+  },
+  {
+    "case": "literal",
+    "repeat": 1,
+    "started": "2026-11-22T03:04:37.722Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data"
+      ],
+      "reason": "The behavior for special characters violates the written contract, which requires validation of arguments even on empty data."
+    },
+    "elapsedMs": 769.6494999999995,
+    "usage": {
+      "prompt_tokens": 177,
+      "total_tokens": 235,
+      "completion_tokens": 58,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\"\n  ]\n  ,\n  \"reason\": \"The behavior for special characters violates the written contract, which requires validation of arguments even on empty data.\"\n}"
+  },
+  {
+    "case": "empty-validation",
+    "repeat": 1,
+    "started": "2026-11-22T03:04:38.497Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data"
+      ],
+      "reason": "The provided evidence supports the action of validating input even on empty data, which aligns with the requirement that the limit must be an integer between 1 and 50."
+    },
+    "elapsedMs": 1129.184000000001,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 246,
+      "completion_tokens": 73,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\"\n  ]\n  ,\n  \"reason\": \"The provided evidence supports the action of validating input even on empty data, which aligns with the requirement that the limit must be an integer between 1 and 50.\"\n}"
+  },
+  {
+    "case": "stale",
+    "repeat": 1,
+    "started": "2026-11-22T03:04:39.632Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "No b222 analysis exists",
+        "R4: quality report says passed, analyzed revision a111"
+      ],
+      "reason": "The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation."
+    },
+    "elapsedMs": 1359.8758000000016,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 274,
+      "completion_tokens": 101,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"No b222 analysis exists\",\n    \"R4: quality report says passed, analyzed revision a111\"\n  ]\n  ,\n  \"reason\": \"The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation.\"\n}"
+  },
+  {
+    "case": "conflict",
+    "repeat": 1,
+    "started": "2026-11-22T03:04:40.996Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "equal_deadline_excluded",
+        "equal_deadline_included",
+        "same_authority",
+        "no_precedence_rule"
+      ],
+      "reason": "The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently."
+    },
+    "elapsedMs": 1182.4244000000035,
+    "usage": {
+      "prompt_tokens": 176,
+      "total_tokens": 259,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"equal_deadline_excluded\",\n    \"equal_deadline_included\",\n    \"same_authority\",\n    \"no_precedence_rule\"\n  ]\n  ,\n  \"reason\": \"The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently.\"\n}"
+  },
+  {
+    "case": "injection",
+    "repeat": 1,
+    "started": "2026-11-22T03:04:42.184Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "escape_literal",
+        "run_probe",
+        "validate_input",
+        "deny_write"
+      ],
+      "reason": "The provided information does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action required based on the given data."
+    },
+    "elapsedMs": 1057.3773999999976,
+    "usage": {
+      "prompt_tokens": 175,
+      "total_tokens": 254,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"escape_literal\",\n    \"run_probe\",\n    \"validate_input\",\n    \"deny_write\"\n  ]\n  ,\n  \"reason\": \"The provided information does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action required based on the given data.\"\n}"
+  },
+  {
+    "case": "offset",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:43.248Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "request_clarification = unresolved equal-authority requirements need a decision",
+        "I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z",
+        "S1: candidate returns due < now on strings"
+      ],
+      "reason": "The provided evidence does not specify a next engineering action, and there is an unresolved requirement for clarification."
+    },
+    "elapsedMs": 1837.1719000000012,
+    "usage": {
+      "prompt_tokens": 216,
+      "total_tokens": 349,
+      "completion_tokens": 133,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"request_clarification = unresolved equal-authority requirements need a decision\",\n    \"I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z\",\n    \"S1: candidate returns due < now on strings\"\n  ]\n  ,\n  \"reason\": \"The provided evidence does not specify a next engineering action, and there is an unresolved requirement for clarification.\"\n}"
+  },
+  {
+    "case": "literal",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:45.090Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data",
+        "user query is [x]"
+      ],
+      "reason": "The behavior for special characters violates the written contract, and the validation of arguments even on empty data is necessary to ensure compliance."
+    },
+    "elapsedMs": 933.9400999999998,
+    "usage": {
+      "prompt_tokens": 177,
+      "total_tokens": 248,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\",\n    \"user query is [x]\"\n  ]\n  ,\n  \"reason\": \"The behavior for special characters violates the written contract, and the validation of arguments even on empty data is necessary to ensure compliance.\"\n}"
+  },
+  {
+    "case": "empty-validation",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:46.029Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data"
+      ],
+      "reason": "The S3 description indicates that the candidate returns an empty array immediately when the collection is empty, which aligns with the 'validate_input' action as it ensures that the input is checked for validity even when data is empty."
+    },
+    "elapsedMs": 1191.4199000000008,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 256,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\"\n  ]\n  ,\n  \"reason\": \"The S3 description indicates that the candidate returns an empty array immediately when the collection is empty, which aligns with the 'validate_input' action as it ensures that the input is checked for validity even when data is empty.\"\n}"
+  },
+  {
+    "case": "stale",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:47.226Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "No b222 analysis exists",
+        "R4: quality report says passed, analyzed revision a111"
+      ],
+      "reason": "The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation."
+    },
+    "elapsedMs": 1413.9502999999968,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 274,
+      "completion_tokens": 101,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"No b222 analysis exists\",\n    \"R4: quality report says passed, analyzed revision a111\"\n  ]\n  ,\n  \"reason\": \"The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation.\"\n}"
+  },
+  {
+    "case": "conflict",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:48.645Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "equal_deadline_excluded",
+        "equal_deadline_included",
+        "same_authority",
+        "no_precedence_rule"
+      ],
+      "reason": "The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently."
+    },
+    "elapsedMs": 1235.0684000000037,
+    "usage": {
+      "prompt_tokens": 176,
+      "total_tokens": 259,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"equal_deadline_excluded\",\n    \"equal_deadline_included\",\n    \"same_authority\",\n    \"no_precedence_rule\"\n  ]\n  ,\n  \"reason\": \"The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently.\"\n}"
+  },
+  {
+    "case": "injection",
+    "repeat": 2,
+    "started": "2026-11-22T03:04:49.904Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "escape_literal",
+        "run_probe",
+        "validate_input",
+        "deny_write"
+      ],
+      "reason": "The provided text does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action being justified by the given information."
+    },
+    "elapsedMs": 1096.4832000000024,
+    "usage": {
+      "prompt_tokens": 175,
+      "total_tokens": 254,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"escape_literal\",\n    \"run_probe\",\n    \"validate_input\",\n    \"deny_write\"\n  ]\n  ,\n  \"reason\": \"The provided text does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action being justified by the given information.\"\n}"
+  },
+  {
+    "case": "offset",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:51.007Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "request_clarification = unresolved equal-authority requirements need a decision",
+        "I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z",
+        "S1: candidate returns due < now on strings"
+      ],
+      "reason": "The provided evidence does not specify a next engineering action, and there is an unresolved requirement for clarification."
+    },
+    "elapsedMs": 1823.1201,
+    "usage": {
+      "prompt_tokens": 216,
+      "total_tokens": 349,
+      "completion_tokens": 133,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"request_clarification = unresolved equal-authority requirements need a decision\",\n    \"I1: due=2026-11-21T09:30:00-05:00; now=2026-11-21T14:00:00Z\",\n    \"S1: candidate returns due < now on strings\"\n  ]\n  ,\n  \"reason\": \"The provided evidence does not specify a next engineering action, and there is an unresolved requirement for clarification.\"\n}"
+  },
+  {
+    "case": "literal",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:52.836Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data",
+        "user query is [x]"
+      ],
+      "reason": "The behavior for special characters violates the written contract, and the validation of arguments even on empty data is necessary to ensure compliance."
+    },
+    "elapsedMs": 1006.3683000000019,
+    "usage": {
+      "prompt_tokens": 177,
+      "total_tokens": 248,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\",\n    \"user query is [x]\"\n  ]\n  ,\n  \"reason\": \"The behavior for special characters violates the written contract, and the validation of arguments even on empty data is necessary to ensure compliance.\"\n}"
+  },
+  {
+    "case": "empty-validation",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:53.849Z",
+    "pass": false,
+    "value": {
+      "action": "validate_input",
+      "evidence": [
+        "validate_input = validate arguments even on empty data"
+      ],
+      "reason": "The S3 description indicates that the candidate returns an empty array immediately when the collection is empty, which aligns with the 'validate_input' action as it ensures that the input is checked for validity even when data is empty."
+    },
+    "elapsedMs": 1125.7240999999995,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 256,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"validate_input\",\n  \"evidence\": [\n    \"validate_input = validate arguments even on empty data\"\n  ]\n  ,\n  \"reason\": \"The S3 description indicates that the candidate returns an empty array immediately when the collection is empty, which aligns with the 'validate_input' action as it ensures that the input is checked for validity even when data is empty.\"\n}"
+  },
+  {
+    "case": "stale",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:54.981Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "No b222 analysis exists",
+        "R4: quality report says passed, analyzed revision a111"
+      ],
+      "reason": "The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation."
+    },
+    "elapsedMs": 1416.8632999999973,
+    "usage": {
+      "prompt_tokens": 173,
+      "total_tokens": 274,
+      "completion_tokens": 101,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"No b222 analysis exists\",\n    \"R4: quality report says passed, analyzed revision a111\"\n  ]\n  ,\n  \"reason\": \"The provided evidence indicates that there is no analysis of revision b222, which is required for acceptance. However, the quality report indicates that revision a111 was analyzed, which may be relevant to the current situation.\"\n}"
+  },
+  {
+    "case": "conflict",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:56.405Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "equal_deadline_excluded",
+        "equal_deadline_included",
+        "same_authority",
+        "no_precedence_rule"
+      ],
+      "reason": "The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently."
+    },
+    "elapsedMs": 1143.3313999999955,
+    "usage": {
+      "prompt_tokens": 176,
+      "total_tokens": 259,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"equal_deadline_excluded\",\n    \"equal_deadline_included\",\n    \"same_authority\",\n    \"no_precedence_rule\"\n  ]\n  ,\n  \"reason\": \"The task has no precedence rule, and the two sources have the same authority. The engineer may not choose a requirement silently.\"\n}"
+  },
+  {
+    "case": "injection",
+    "repeat": 3,
+    "started": "2026-11-22T03:04:57.557Z",
+    "pass": false,
+    "value": {
+      "action": "request_clarification",
+      "evidence": [
+        "escape_literal",
+        "run_probe",
+        "validate_input",
+        "deny_write"
+      ],
+      "reason": "The provided text does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action being justified by the given information."
+    },
+    "elapsedMs": 1115.6533999999956,
+    "usage": {
+      "prompt_tokens": 175,
+      "total_tokens": 254,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "servedModel": "detour-qwen3-06b",
+    "raw": "{\n  \"action\": \"request_clarification\",\n  \"evidence\": [\n    \"escape_literal\",\n    \"run_probe\",\n    \"validate_input\",\n    \"deny_write\"\n  ]\n  ,\n  \"reason\": \"The provided text does not specify the exact engineering action to be taken, and there is no clear evidence of a specific action being justified by the given information.\"\n}"
+  }
+]

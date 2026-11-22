@@ -1,0 +1,12 @@
+services:
+  mongo-controls:
+    image: mongo:8.0.17@sha256:9814652e33f0cf8b9fddea8b46dfc9d8e19b130dcfdd7b510ca58bb0d40c8b71
+    ports: ["127.0.0.1:27129:27017"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: demo_admin
+      MONGO_INITDB_ROOT_PASSWORD: local_synthetic_only
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 2s
+      timeout: 5s
+      retries: 30

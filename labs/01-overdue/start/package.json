@@ -1,0 +1,24 @@
+{
+  "name": "ai-detour-triage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "test:baseline": "npm run build && node --test dist/tests/baseline.test.js",
+    "test:acceptance": "npm run build && node --test dist/tests/acceptance.test.js",
+    "triage": "node dist/src/cli.js"
+  },
+  "dependencies": {
+    "mongodb": "7.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  },
+  "license": "MIT"
+}
